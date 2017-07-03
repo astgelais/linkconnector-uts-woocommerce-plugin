@@ -147,10 +147,8 @@ $items = $order->get_items();
 /****** initialize javascript array ********/
 
 $order_items = <<<ORDER_ITEMS
-
 <script type="text/javascript">
 var uts_products = new Array();
-
 ORDER_ITEMS;
 
 /****** loop thru cart ********/
@@ -161,22 +159,18 @@ $sku = $itemDetails->get_sku();
 $category = strip_tags($itemDetails->get_categories());
 $price = $itemDetails->get_price();
 $order_items .= <<<ORDER_ITEMS
-
 uts_products[$j] = new Array(); 
 uts_products[$j][0] = "$sku";
 uts_products[$j][1] = "$itemID[name]";
 uts_products[$j][2] = "$itemID[qty]";
 uts_products[$j][3] = "$price";
 uts_products[$j][4] = "$category";
-
 ORDER_ITEMS;
-
 $j++;
 }
 
 /****** close javascript array declaration *****/
 $order_items .= <<<ORDER_ITEMS
-
 </script>
 ORDER_ITEMS;
 
