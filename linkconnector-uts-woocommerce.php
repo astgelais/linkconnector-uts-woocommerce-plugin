@@ -161,7 +161,7 @@ $sku = $itemDetails->get_sku();
 $category = strip_tags($itemDetails->get_categories());
 $price = $itemDetails->get_price();
 $order_items .= <<<ORDER_ITEMS
-\n
+
 uts_products[$j] = new Array(); 
 uts_products[$j][0] = "$sku";
 uts_products[$j][1] = "$itemID[name]";
@@ -176,8 +176,8 @@ $j++;
 
 /****** close javascript array declaration *****/
 $order_items .= <<<ORDER_ITEMS
-\n
-</script>\n
+
+</script>
 ORDER_ITEMS;
 
 echo $order_items;
